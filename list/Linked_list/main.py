@@ -14,7 +14,7 @@ test.append(1)
 test.append(3)
 test.append(5)
 test.append(7)
-test.remove(1)
+test.insert(0,100)
 
 for i in range(test.len()):
     print(test.get(i))
