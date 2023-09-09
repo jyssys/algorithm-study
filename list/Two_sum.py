@@ -10,7 +10,7 @@ def twoSum1(nums, target):
 
     return False
 
-# 시간복잡도 O(nlog(n)) 알고리즘 (정렬 후 탐색)
+# 시간복잡도 O(nlog(n)) 알고리즘 (정렬 후 조건탐색)
 
 def twoSum2(nums, target):
     # O(nlog(n))

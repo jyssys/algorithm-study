@@ -1,4 +1,4 @@
-class Node : 
+class Node: 
     def __init__(self, value = 0, next = None):
         self.value = value
         self.next = next
@@ -17,7 +17,6 @@ class LinkedList(object):
             cnt = cnt + 1
         
         return cnt+1
-        
             
     def append(self, value): # O(1)
         new_node = Node(value)
