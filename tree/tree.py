@@ -78,8 +78,27 @@ class BinaryTree:
         # left, right값이 하나만 존재하거나 둘다 None값이면
         return left or right
     
+    def MDBT(root):
+        if root is None:
+            return 0
+        
+        q = deque()
+        depth = 0
+        q.append((root, 1))
+        
+        while q:
+            cur_node, cur_depth = q.popleft()
+            depth = cur_depth
+            
+            if cur_node.left:
+                q.append((cur_node.left, cur_depth + 1))
+            if cur_node.right:
+                q.append((cur_node.right, cur_depth + 1))
+
+        return depth
     
 # new_tree = BinaryTree(3)
 root = BinaryTree.insert_arr([3,5,1,6,2,0,8,None,None,7,4])
 # print(root)
-print(BinaryTree.LCA(root, 6, 4))
+# print(BinaryTree.LCA(root, 6, 4))
+print(BinaryTree.MDBT(root))
