@@ -33,6 +33,7 @@ class BinaryTree:
         
         return root
     
+    # lever order can with queue
     def bfs(root):
         # 초기세팅
         visited = []
@@ -53,13 +54,18 @@ class BinaryTree:
                 q.append(cur_node.right)
         return visited
     
+    # pre, in, post order can with recursion or stack
     def dfs(cur_node):
         if cur_node is None:
             return
         
+        # pre order func
         BinaryTree.dfs(cur_node.left)
+        # in order func
         BinaryTree.dfs(cur_node.right)
+        # post order func
         
+    # post order with recursion
     def LCA(root, p:int, q:int):
         # root : 모든 노드
         # p, q : search node
@@ -78,6 +84,7 @@ class BinaryTree:
         # left, right값이 하나만 존재하거나 둘다 None값이면
         return left or right
     
+    # lever order (BFS)
     def MDBT(root):
         if root is None:
             return 0
@@ -95,6 +102,19 @@ class BinaryTree:
             if cur_node.right:
                 q.append((cur_node.right, cur_depth + 1))
 
+        return depth
+    
+    # post order (DFS)
+    def MDBT_post(root):
+        depth = 0
+        
+        if root is None:
+            return depth
+        
+        left_depth = BinaryTree.MDBT_post(root.left)
+        right_depth = BinaryTree.MDBT_post(root.right)
+        depth = max(left_depth, right_depth) + 1
+        
         return depth
     
 # new_tree = BinaryTree(3)
