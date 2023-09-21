@@ -1,9 +1,11 @@
 from collections import deque
 
 grid = [
-    [0, 0, 0],
-    [1, 1, 0],
-    [1, 1, 0]
+    [0, 0, 0, 1, 0, 0, 0],
+    [0, 1, 1, 1, 0, 1, 0],
+    [0, 1, 0, 0, 0, 1, 0],
+    [0, 0, 0, 1, 1, 1, 0],
+    [0, 1, 0, 0, 0, 0, 0]
 ]
 
 class graph(object):
@@ -30,7 +32,7 @@ class graph(object):
         self.visited = [[False]*col for _ in range(row)]
         
         self.visited[0][0] = True
-        queue = deque()
+        queue = deque() # tuple은 선언초기화 불가 ㅠ
         queue.append((0, 0, 1)) # row, col, path cnt
         
         while queue:
