@@ -43,7 +43,7 @@ class graph(object):
                 shortest_path_len = cur_len
                 break
             
-            # 연결 virtex 확인! 대각선 주의
+            # 연결 vertex 확인! 대각선 주의
             for dr, dc in delta:
                 next_row = cur_row + dr
                 next_col = cur_col + dc
