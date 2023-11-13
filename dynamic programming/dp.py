@@ -20,3 +20,10 @@ def fibo_bu(n):
         memo[i] = memo[i-1] + memo[i-2]
         
     return memo[n]
+
+def sub(n):
+    if n <= 0:
+        return 0
+    
+    print(n)
+    return sub(n-1) + sub(n-2)
